@@ -1,0 +1,142 @@
+/* Elecrow's screens before the widgets demo: positions are the factory
+   firmware's, on an 800x480 panel. */
+
+.splash {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 800px;
+  height: 480px;
+  background-color: #000000;
+}
+
+/* Boot: the logo drops 190 px in one second. */
+.boot-logo {
+  position: absolute;
+  left: 280px;
+  top: 0px;
+  width: 241px;
+  height: 90px;
+  animation: drop 1000ms linear both;
+}
+
+@keyframes drop {
+  from {
+    transform: translate(0px, 0px);
+  }
+
+  to {
+    transform: translate(0px, 190px);
+  }
+}
+
+.boot-caption {
+  position: absolute;
+  left: 280px;
+  top: 295px;
+  width: 241px;
+  height: 34px;
+}
+
+/* Menu. The round buttons are 90 px artwork drawn at 300/256 zoom. */
+.menu-backdrop {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 800px;
+  height: 480px;
+}
+
+.round-button {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+}
+
+.image-button-art {
+  width: 105px;
+  height: 105px;
+}
+
+.menu-touch {
+  left: 0px;
+  top: 375px;
+}
+
+.menu-home {
+  left: 695px;
+  top: 375px;
+}
+
+/* Touch check. */
+.touch-label {
+  position: absolute;
+  left: 245px;
+  top: 186px;
+  width: 200px;
+  text-align: center;
+  font-size: 24px;
+  color: #ff0000;
+}
+
+.touch-value {
+  position: absolute;
+  left: 385px;
+  top: 186px;
+  width: 200px;
+  text-align: center;
+  font-size: 24px;
+  color: #00ff00;
+}
+
+.touch-adjust {
+  left: 140px;
+  top: 10px;
+}
+
+.touch-return {
+  left: 555px;
+  top: 10px;
+}
+
+/* Corner calibration. */
+.calibrate-title {
+  position: absolute;
+  left: 200px;
+  top: 236px;
+  width: 400px;
+  text-align: center;
+  font-size: 24px;
+  color: #09befb;
+}
+
+.corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #ff0000;
+}
+
+.corner-hidden {
+  display: none;
+}
+
+.corner-tl {
+  left: 0px;
+  top: 0px;
+}
+
+.corner-bl {
+  left: 0px;
+  top: 462px;
+}
+
+.corner-tr {
+  left: 782px;
+  top: 0px;
+}
+
+.corner-br {
+  left: 782px;
+  top: 462px;
+}

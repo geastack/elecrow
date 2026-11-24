@@ -1,0 +1,229 @@
+/* LVGL's button at 800 px: content-sized with 20/11 px padding, a 13 px
+   radius and a hard 2 px grey shadow under it (lighter when disabled). The
+   static stylesheet drops outer box-shadows, so the shadow is its own
+   rounded box behind the face, shifted down 2 px exactly like LVGL's. */
+.button-frame {
+  position: relative;
+  display: flex;
+}
+
+.button-shadow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2px;
+  bottom: -2px;
+  border-radius: 13px;
+  background-color: #cfcfcf;
+}
+
+.button-shadow-disabled {
+  background-color: #dedede;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 11px 20px;
+  border-radius: 13px;
+}
+
+.button-label {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/* LVGL's switch at 130 DPI: 52 x 30, a fully rounded track and a 24 px
+   white knob inset 3 px. */
+.switch {
+  position: relative;
+  width: 52px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.switch-knob {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.switch-on .switch-knob {
+  left: 25px;
+}
+
+/* The slider box is the 309 px track; the 20 px knob hangs 10 px past either
+   end, centred on the value. The track sits 8 px into the card's content. */
+.slider {
+  position: relative;
+  width: 309px;
+  height: 20px;
+  margin-left: 8px;
+}
+
+.slider-track {
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  width: 309px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider-indicator {
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider-knob {
+  position: absolute;
+  top: 0px;
+  margin-left: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.slider-value {
+  position: absolute;
+  top: -30px;
+  width: 40px;
+  height: 24px;
+  margin-left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: #e0e0e0;
+  font-size: 14px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.checkbox-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 22px;
+  height: 22px;
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+/* LVGL's pressed grow: 2 px a side, taken back by the margins so the label
+   and the rows around it stay put. */
+.checkbox-box-pressed {
+  width: 26px;
+  height: 26px;
+  margin: -2px;
+}
+
+.checkbox-box svg {
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox-label {
+  margin-top: 2px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/* A labelled field in one column of a card's two-column grid: half of
+   (326 - 11) px. LVGL centres the 44 px box in a 30 px row, so it sits 4 px
+   under its label. */
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 157px;
+  gap: 4px;
+}
+
+/* LVGL's one-line textarea and dropdown: the card style with the small
+   (11 px) padding, so 18 + 22 + 4 = 44 px tall. */
+.text-input,
+.dropdown {
+  box-sizing: border-box;
+  width: 157px;
+  height: 44px;
+  padding: 11px;
+  background-color: #ffffff;
+  border-width: 2px;
+  border-color: #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #212121;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* The options open under the field, over whatever is below: the card style
+   (20 px padding, 2 px border) with LVGL's large 16 px line spacing, so each
+   option's highlight is 18 + 16 = 34 px tall. */
+.dropdown-field {
+  position: relative;
+}
+
+.dropdown-list {
+  position: absolute;
+  left: 0px;
+  top: 66px;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 157px;
+  padding: 12px 2px;
+  background-color: #ffffff;
+  border-width: 2px;
+  border-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.dropdown-option {
+  height: 34px;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 34px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.legend-text {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.bullet {
+  width: 13px;
+  height: 13px;
+  border-radius: 7px;
+}

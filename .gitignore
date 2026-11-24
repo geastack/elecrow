@@ -1,0 +1,8 @@
+node_modules/
+dist/
+build/
+.gea/
+.DS_Store
+
+# Elecrow upstream factory source checkout
+/1.46/vendor/

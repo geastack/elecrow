@@ -1,0 +1,45 @@
+/* LVGL's default theme card at 800 px wide (130 DPI, the "large" layout):
+   20 px padding, 11 px row/column gap, a 2 px grey-lighten-2 border and a
+   10 px radius. LVGL sizes include padding and border, hence border-box. */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-width: 2px;
+  border-color: #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 11px;
+}
+
+/* The tab page is a two-column grid: (760 - 20) / 2 = 370 px per column. */
+.card-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 760px;
+  gap: 20px;
+}
+
+.card-wide {
+  width: 760px;
+}
+
+.card-half {
+  width: 370px;
+}
+
+.card-title {
+  font-size: 24px;
+  line-height: 27px;
+  color: #212121;
+}
+
+/* LVGL's muted text, as its renderer lands it on white. */
+.muted {
+  font-size: 16px;
+  line-height: 18px;
+  color: #c8c8c8;
+}

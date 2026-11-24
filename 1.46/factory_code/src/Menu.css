@@ -1,0 +1,41 @@
+.selection,
+.menu-icon {
+  position: absolute;
+}
+.selection {
+  left: 127px;
+  top: 30px;
+  width: 105px;
+  height: 300px;
+}
+.menu-item {
+  position: absolute;
+  top: 0;
+  width: 90px;
+  height: 250px;
+}
+.menu-icon {
+  left: 22px;
+  top: 157px;
+  width: 45px;
+  height: 45px;
+}
+.menu-label {
+  position: absolute;
+  top: 207px;
+  width: 90px;
+  text-align: center;
+  font-size: 14px;
+}
+.selected {
+  color: #00ffff;
+}
+.menu-button {
+  background: transparent;
+  padding: 0;
+  border: 0;
+}
+.menu-button img {
+  width: 45px;
+  height: 45px;
+}

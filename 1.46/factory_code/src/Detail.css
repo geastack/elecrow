@@ -1,0 +1,49 @@
+.dial {
+  position: absolute;
+  inset: 0;
+  width: 360px;
+  height: 360px;
+}
+.detail-icon {
+  position: absolute;
+  top: 87px;
+  left: 157px;
+  width: 45px;
+  height: 46px;
+}
+
+.detail-value,
+.detail-label {
+  position: absolute;
+  left: 0;
+  width: 360px;
+  text-align: center;
+}
+
+.detail-value {
+  top: 151px;
+  font-size: 48px;
+  line-height: 58px;
+}
+.detail-label {
+  top: 218px;
+  font-size: 20px;
+  line-height: 24px;
+}
+.return {
+  position: absolute;
+  left: 140px;
+  top: 270px;
+  width: 80px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: #33dcff;
+  color: black;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+}

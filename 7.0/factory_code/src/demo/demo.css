@@ -1,0 +1,161 @@
+/* LVGL 8's widgets demo in the default light theme, laid out the way the
+   demo lays itself out on a display 720 px or wider. */
+
+.widgets {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  /* Fills the app box, which the virtual keyboard shrinks to the rows above
+     it -- LVGL sets the tabview to LV_VER_RES minus the keyboard. */
+  height: 100%;
+  background-color: #f5f5f5;
+  color: #212121;
+  font-size: 16px;
+}
+
+.tab-bar {
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 70px;
+  background-color: #ffffff;
+}
+
+.brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  width: 400px;
+  height: 70px;
+  padding-left: 25px;
+  gap: 15px;
+}
+
+.brand-logo {
+  width: 37px;
+  height: 43px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  height: 70px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  box-sizing: border-box;
+  height: 70px;
+  padding-top: 4px;
+  border-bottom-width: 4px;
+}
+
+/* The tab body takes what the tab bar leaves, so when the keyboard halves
+   the demo (LVGL sets the tabview 240 px tall) the open page shrinks with
+   it and scrolls the focused field into view. */
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0px;
+  width: 800px;
+}
+
+/* LVGL's tabview content: the pages in a row, scrolled sideways a page at a
+   time with no scrollbar. `snap-page` on the element makes the engine settle
+   on page edges; scroll-snap does the same in a browser. */
+.tab-pager {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 0px;
+  width: 800px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+/* A page not mounted yet holds its place in the pager. */
+.tab-page-slot {
+  flex-shrink: 0;
+  width: 800px;
+  height: 100%;
+}
+
+/* A tab page: 20 px padding and gap, scrolling vertically only, as LVGL's
+   tabview pages do. */
+.tab-page {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  height: 100%;
+  width: 800px;
+  scroll-snap-align: start;
+  padding: 20px;
+  gap: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* LVGL's colour changer at 800 px: a 49 px white pill 8 px from the corner
+   that widens to 784 px in 200 ms, its 20 px swatches spread evenly left of a
+   45 px right padding, and the 41 px tint button 12 px from the corner. */
+.color-changer {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 0px;
+  height: 0px;
+}
+
+.color-pill {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  height: 49px;
+  box-sizing: border-box;
+  padding-right: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  border-radius: 25px;
+  background-color: #ffffff;
+  transition: width 200ms linear;
+}
+
+.swatch {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  transition: opacity 200ms linear;
+}
+
+.tint-button {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 41px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 21px;
+}

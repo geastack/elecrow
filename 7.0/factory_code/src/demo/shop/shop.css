@@ -1,0 +1,97 @@
+/* Monthly Summary: two equal columns, rows title / date / 20 px / amount /
+   hint, 11 px apart, and 30 px of bottom padding. */
+.card.summary-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 27px 18px 20px 27px 18px;
+  column-gap: 11px;
+  row-gap: 11px;
+  width: 760px;
+  padding-bottom: 30px;
+}
+
+.summary-title {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.summary-date {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.summary-amount {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+.summary-hint {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.summary-hint svg {
+  width: 15px;
+  height: 9px;
+}
+
+.growth-text {
+  font-size: 16px;
+  line-height: 18px;
+  color: #4caf50;
+}
+
+.summary-chart {
+  grid-column: 2 / 3;
+  grid-row: 1 / 6;
+}
+
+/* The two lists: 100% of the page height capped at 300, side by side. */
+.card.list-card {
+  height: 300px;
+}
+
+.card.product-list {
+  overflow-y: scroll;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 56px 5px 1fr 1fr;
+  grid-template-rows: 28px 28px;
+  flex-shrink: 0;
+}
+
+.product-image {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  width: 56px;
+  height: 56px;
+}
+
+.product-name {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  align-self: end;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.product-category {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  align-self: start;
+}
+
+.product-price {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+  align-self: end;
+  justify-self: end;
+  font-size: 16px;
+  line-height: 18px;
+}

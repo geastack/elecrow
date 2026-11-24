@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Montserrat;
+  src: url('../assets/fonts/Montserrat-Medium.ttf');
+}
+
+.root,
+.screen,
+.background {
+  position: absolute;
+  inset: 0;
+  width: 360px;
+  height: 360px;
+}
+
+.root {
+  overflow: hidden;
+  color: white;
+  background: black;
+  font-family: Montserrat, sans-serif;
+}

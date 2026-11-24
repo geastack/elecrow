@@ -1,0 +1,108 @@
+/* The contact card is LVGL's grid at 800 px. Columns: the avatar, a 5 px
+   spacer, the icons, then 2fr / 1fr / 1fr for the contact text and the two
+   buttons. Rows: name, description, a 10 px spacer, e-mail, phone. Both
+   gaps are the card's 11 px. */
+.card.profile-card {
+  display: grid;
+  grid-template-columns: 154px 5px 24px 2fr 1fr 1fr;
+  grid-template-rows: 27px 18px 10px 27px 27px;
+  column-gap: 11px;
+  row-gap: 11px;
+}
+
+.avatar {
+  grid-column: 1 / 2;
+  grid-row: 1 / 6;
+  align-self: center;
+  width: 154px;
+  height: 154px;
+}
+
+.profile-name {
+  grid-column: 3 / 5;
+  grid-row: 1 / 2;
+  align-self: center;
+}
+
+.profile-description {
+  grid-column: 3 / 7;
+  grid-row: 2 / 3;
+}
+
+.contact-icon {
+  grid-column: 3 / 4;
+  align-self: center;
+  justify-self: center;
+  width: 24px;
+  height: 24px;
+}
+
+.contact-text {
+  grid-column: 4 / 5;
+  align-self: center;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.email-icon,
+.email-text {
+  grid-row: 4 / 5;
+}
+
+.phone-icon,
+.phone-text {
+  grid-row: 5 / 6;
+}
+
+.profile-log-out,
+.profile-invite {
+  display: flex;
+  flex-direction: column;
+  grid-row: 4 / 6;
+  align-self: center;
+}
+
+.profile-log-out {
+  grid-column: 5 / 6;
+}
+
+.profile-invite {
+  grid-column: 6 / 7;
+}
+
+/* The form and skills cards use LVGL's rows: title, a 5 px spacer, a label,
+   a 30 px box row, a 5 px spacer, a label, a 30 px row, all 11 px apart.
+   The 44 px fields overhang their 30 px rows by 7 px each side, so a label
+   sits 27 px under the title and 20 px under the field above it. */
+.field-row {
+  display: flex;
+  flex-direction: row;
+  gap: 11px;
+  margin-top: 16px;
+}
+
+.field-row-next {
+  margin-top: 9px;
+}
+
+.field-gap {
+  margin-top: 16px;
+}
+
+/* The slider's 20 px knob is centred in a 30 px row 11 px under its label. */
+.skills-slider {
+  margin-top: 5px;
+}
+
+/* The switch row starts 27 px after the slider's row, which ends 5 px below
+   the knob. */
+.skills-switches {
+  margin-top: 21px;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  width: 157px;
+  gap: 11px;
+}

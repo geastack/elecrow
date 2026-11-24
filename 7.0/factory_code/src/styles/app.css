@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/fonts/Montserrat-Medium.ttf');
+}
+
+.app {
+  position: relative;
+  width: 800px;
+  height: 480px;
+  background-color: #000000;
+  font-family: 'Montserrat';
+  font-size: 16px;
+}
+
+.fade-in {
+  animation: fade-in 150ms linear both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

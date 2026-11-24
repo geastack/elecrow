@@ -1,0 +1,95 @@
+.chart {
+  position: relative;
+}
+
+.chart-labels {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+/* LVGL draws the axis labels in the theme's 16 px font, grey, outside the
+   chart object. */
+.value-label {
+  position: absolute;
+  width: 40px;
+  text-align: right;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.category-label {
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/* A zoomed chart scrolls its series and category labels sideways; the
+   division lines and the value axis stay put. */
+.chart-scroll {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.chart-scroll-content {
+  position: relative;
+}
+
+/* A bar chart's lines and bars, as boxes in the chart's coordinates. A bar
+   rounds only its top corners (LVGL's 3 dp radius at 130 DPI): it stands on
+   the bottom border, which clips its lower corners off. */
+.chart-box {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.chart-bar {
+  position: absolute;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+/* A held chart's highlight (LinePress, BarPress), over the chart; the bar
+   chart's clips to the chart's width, as the chart clips its bars. */
+.chart-press {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.chart-press-clip {
+  overflow: hidden;
+}
+
+/* The finger's target over a chart. Pressing redraws the highlight, and a
+   finger whose target goes away loses its gesture, so this stays put: a
+   drag that starts on a chart still swipes to the next tab. */
+.chart-hit {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+/* A pressed point's value box (ValueBox.tsx). */
+.value-box-anchor {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  height: 32px;
+}
+
+.value-box {
+  box-sizing: border-box;
+  height: 32px;
+  padding: 7px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 18px;
+}

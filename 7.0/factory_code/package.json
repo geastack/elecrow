@@ -1,0 +1,36 @@
+{
+  "name": "@geastack/elecrow-crowpanel-advance-7-factory",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The CrowPanel Advance 7.0\" factory demo, rewritten as a GeaStack app: the boot splash, the menu countdown, the touch check and the LVGL 8 widgets demo.",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "gea build --board crowpanel-7 --app crowpanel-factory",
+    "run": "gea run --board crowpanel-7 --app crowpanel-factory"
+  },
+  "dependencies": {
+    "@geastack/core": "^0.1.49"
+  },
+  "devDependencies": {
+    "@geastack/cli": "^0.1.102",
+    "typescript": "~5.9.3"
+  },
+  "gea": {
+    "id": "crowpanel-factory",
+    "name": "CrowPanel Factory Demo",
+    "description": "Elecrow's factory demo for the CrowPanel Advance 7.0\" HMI, in TypeScript.",
+    "entry": "src/index.tsx",
+    "defines": [
+      "GEA_EMBEDDED_MAX_NODES=1024"
+    ],
+    "targets": {
+      "web": true,
+      "esp32": {
+        "cssDevicePixelRatio": 1
+      }
+    },
+    "cssDevicePixelRatio": 1
+  },
+  "license": "MIT"
+}

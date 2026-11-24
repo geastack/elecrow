@@ -1,0 +1,83 @@
+/* The chart cards: LVGL's grid of a 20 px axis column and the chart, under
+   a title row and over a 10 px row the month names hang into. */
+.card.chart-card {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-template-rows: 27px 1fr 10px;
+  column-gap: 11px;
+  row-gap: 11px;
+  width: 760px;
+  height: 300px;
+}
+
+.chart-card-title {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.chart-card-chart {
+  position: relative;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+/* The meter boxes: title, a square meter the width of the content, and
+   three bulleted lines, 11 px apart. */
+.card.meter-card {
+  width: 240px;
+}
+
+.meter {
+  position: relative;
+  width: 196px;
+  height: 196px;
+}
+
+/* Network Speed's needle sits over its static scale; the Monthly Target
+   arcs stack the same way. */
+.meter-needle,
+.meter-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Network Speed's readout: the value in the title font centred 10 px right
+   of the gauge's middle at 55% of its height, "Mbps" 10 px after it with
+   their bottoms aligned. */
+.gauge-label {
+  position: absolute;
+  width: 30px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.gauge-value {
+  position: absolute;
+  left: 93px;
+  top: 107px;
+  width: 30px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 27px;
+  color: #212121;
+}
+
+.gauge-unit {
+  position: absolute;
+  left: 133px;
+  top: 116px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #212121;
+}
+
+/* The meter legends tick every frame. A fixed width (the card's 196 px
+   content less the 13 px bullet and its 11 px gap) keeps each label's box
+   the same whatever its digits, so a new value repaints in place instead of
+   laying the whole tab out again. The text is left-aligned on one line, so
+   it draws where it did when the box was its own width. */
+.meter-card .legend-text {
+  width: 172px;
+}
